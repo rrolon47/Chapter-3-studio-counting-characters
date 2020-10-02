@@ -12,16 +12,19 @@ namespace Studio3
             input = input.ToUpper();
             Dictionary<char, int> characterCounts = new Dictionary<char, int>();
             char[] charactersInStr = input.ToCharArray();
-            
+           
             foreach (char item in charactersInStr)
             {
-                if (characterCounts.ContainsKey(item))
+                if (char.IsLetter(item))
                 {
-                    characterCounts[item] ++;
-                }
-                else
-                {
-                    characterCounts.Add(item, 1);
+                    if (characterCounts.ContainsKey(item))
+                    {
+                        characterCounts[item]++;
+                    }
+                    else
+                    {
+                        characterCounts.Add(item, 1);
+                    }
                 }
             }
 
